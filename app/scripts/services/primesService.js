@@ -48,26 +48,8 @@ angular.module('app')
       iteration();
     })();
 
-    function isPrime(n) {
-      if (n < 2 || n != Math.round(n)) {
-        return false;
-      }
-
-      var isPrime = true;
-
-      // Now check every whole number from 2 to the square root of n. If any of these divides n exactly, n cannot be prime.
-      for (var i = 2; i <= Math.sqrt(n); i++) {
-        if (n % i == 0) {
-          isPrime = false;
-        }
-      }
-      return isPrime;
-    }
-
-
     return {
-      primes: primes,
-      isPrime: isPrime
+      primes: primes
     };
 
   });
