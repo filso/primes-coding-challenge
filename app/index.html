@@ -1,0 +1,74 @@
+<!doctype html>
+<html ng-app='app'>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="styles/main.css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  <style type="text/css">
+  [ng\:cloak],
+  [ng-cloak],
+  [data-ng-cloak],
+  [x-ng-cloak],
+  .ng-cloak,
+  .x-ng-cloak {
+    display: none !important;
+  }
+  </style>
+
+</head>
+
+<body>
+  <div class="container" ng-controller='AppCtrl'>
+    <h2>Primes generator</h2>
+    
+    <div class='top-panel clearfix'>
+      <p class='pull-left'>
+        Type number:
+        <input type="number" ng-model='inputNumber'></input>
+        <button class='btn btn-primary' ng-click='go()'>Go!</button>
+      </p>
+
+      <p class='pull-right'>
+        Primes calculated:
+        <span>{{ primes.length }}</span>
+      </p>
+    </div>
+
+    <div ng-view></div>
+  </div>
+
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="bower_components/jquery/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <script src="bower_components/lodash/dist/lodash.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+
+  <script src="scripts/app.js"></script>
+
+  <!--SCRIPTS-->
+  <script src="scripts/controllers/AppCtrl.js"></script>
+  <script src="scripts/controllers/TableCtrl.js"></script>
+  <script src="scripts/routing.js"></script>
+  <script src="scripts/services/CONSTANTS.js"></script>
+  <script src="scripts/services/iface.js"></script>
+  <script src="scripts/services/primesService.js"></script>
+  <!--SCRIPTS END-->
+
+</body>
+
+</html>
