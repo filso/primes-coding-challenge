@@ -9,7 +9,6 @@ var concat = require('gulp-concat'),
   jshint = require('gulp-jshint'),
   clean = require('gulp-clean'),
   cache = require('gulp-cached'),
-  jade = require('gulp-jade'),
   linker = require('gulp-linker'),
   runSequence = require('run-sequence'),
   ngAnnotate = require('gulp-ng-annotate'),
@@ -73,7 +72,7 @@ gulp.task('no-karma', function() {
 });
 
 
-gulp.task('preprocess', ['templates', 'sass']);
+gulp.task('preprocess', ['sass']);
 // The default task (called when you run `gulp` from cli)
 gulp.task('default', ['develop']);
 
@@ -150,17 +149,3 @@ gulp.task('linker', function() {
     .pipe(gulp.dest('app/'));
 });
 
-
-gulp.task('templates', ['jade']);
-
-gulp.task('jade', function() {
-  return gulp.src(paths.templates.jade)
-    .pipe(plumber({
-      errorHandler: onError
-    }))
-    .pipe(cache('jade'))
-    .pipe(jade({
-      pretty: true,
-      doctype: "html"
-    }));
-});

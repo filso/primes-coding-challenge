@@ -10,7 +10,6 @@
     "gulp-concat": "~2.2.0",
     "gulp-connect": "~1.0.10",
     "gulp-exec": "~2.0.1",
-    "gulp-jade": "~0.4.2",
     "gulp-linker": "~0.1.7",
     "gulp-livereload": "~1.2.0",
     "gulp-plumber": "~0.6.1",
