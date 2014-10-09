@@ -3,7 +3,9 @@ angular.module('app')
 
     var primes = primesService.primes;
 
-    // primes.unshift(1); // add 1 in front for easy multiplication
+    function initDefaultNumber() {
+      $scope.inputNumber = 10;
+    }
 
     function printTable() {
       $scope.$broadcast('generateTable', {input: $scope.inputNumber});
@@ -20,7 +22,7 @@ angular.module('app')
           iface.message('The ' + $scope.inputNumber + 'th prime is ' + primesService.primes[$scope.inputNumber]);
         }
 
-        $scope.inputNumber = 10;
+        initDefaultNumber();
         return;
       }
       printTable();
@@ -32,7 +34,7 @@ angular.module('app')
 
     (function init() {
       // initialise with default and print table
-      $scope.inputNumber = 10;
+      initDefaultNumber();
       printTable();
     })();
 
